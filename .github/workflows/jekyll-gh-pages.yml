@@ -1,51 +1,66 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: "Mobile Engineer Resume"
+about: >
+  I am a passionate and detail-oriented Mobile Engineer with experience developing scalable,
+  maintainable, and user-friendly mobile applications using technologies like React Native,
+  Flutter, and native iOS/Android development.
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+skills:
+  - JavaScript
+  - TypeScript
+  - Dart
+  - Java
+  - Kotlin
+  - Swift
+  - React Native
+  - Flutter
+  - SwiftUI
+  - Jetpack Compose
+  - Firebase
+  - REST APIs
+  - GraphQL
+  - Git
+  - CI/CD
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+experience:
+  - title: "Mobile Engineer"
+    company: "ABC Corp"
+    location: "Remote"
+    period: "Jan 2023 – Present"
+    responsibilities:
+      - Developed cross-platform apps using React Native
+      - Integrated Firebase, Stripe, and Google Maps
+      - Collaborated with backend teams on REST APIs
+      - Set up CI/CD pipelines
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  - title: "Junior Mobile Developer"
+    company: "XYZ Ltd"
+    location: "Tokyo, Japan"
+    period: "Jun 2021 – Dec 2022"
+    responsibilities:
+      - Maintained Kotlin Android apps
+      - Refactored legacy code to MVVM
+      - Participated in Agile ceremonies
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+education:
+  degree: "Bachelor of Science in Computer Science"
+  university: "Tech University"
+  year: 2020
 
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+certifications:
+  - "Google Associate Android Developer – Google, 2023"
+  - "Flutter Developer Bootcamp – Udemy, 2022"
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+projects:
+  - name: "FoodieApp"
+    tech: "React Native, Firebase"
+    description: "A food delivery app with real-time tracking."
+
+  - name: "FitTrack"
+    tech: "Flutter, Hasura, GraphQL"
+    description: "Fitness tracker with social features."
+
+contact:
+  email: "you@example.com"
+  github: "https://github.com/yourusername"
+  linkedin: "https://linkedin.com/in/yourusername"
+  portfolio: "https://yourdomain.com"
