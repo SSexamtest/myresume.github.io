@@ -1,50 +1,57 @@
----
-layout: page
-title: Resume
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile Engineer Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📱 Mobile Engineer Resume</h1>
+      <p>I am a passionate and detail-oriented Mobile Engineer with experience in scalable, maintainable, and user-friendly apps using React Native, Flutter, and native stacks.</p>
+    </header>
 
-# {{ site.data.resume.name }}
+    <section>
+      <h2>🛠 Skills</h2>
+      <ul id="skills-list"></ul>
+    </section>
 
-## 👤 About Me
-{{ site.data.resume.about }}
+    <section>
+      <h2>💼 Experience</h2>
+      <div id="experience-list"></div>
+    </section>
 
-## 🛠 Skills
-<ul>
-{% for skill in site.data.resume.skills %}
-  <li>{{ skill }}</li>
-{% endfor %}
-</ul>
+    <section>
+      <h2>🎓 Education</h2>
+      <p><strong>Bachelor of Science in Computer Science</strong><br>Tech University – 2020</p>
+    </section>
 
-## 💼 Experience
-{% for job in site.data.resume.experience %}
-### {{ job.title }} at {{ job.company }} ({{ job.period }})
-**Location**: {{ job.location }}
-<ul>
-{% for item in job.responsibilities %}
-  <li>{{ item }}</li>
-{% endfor %}
-</ul>
-{% endfor %}
+    <section>
+      <h2>🧠 Certifications</h2>
+      <ul>
+        <li>Google Associate Android Developer – Google, 2023</li>
+        <li>Flutter Developer Bootcamp – Udemy, 2022</li>
+      </ul>
+    </section>
 
-## 🎓 Education
-**{{ site.data.resume.education.degree }}**, {{ site.data.resume.education.university }} – {{ site.data.resume.education.year }}
+    <section>
+      <h2>🌐 Projects</h2>
+      <ul id="projects-list"></ul>
+    </section>
 
-## 🧠 Certifications
-<ul>
-{% for cert in site.data.resume.certifications %}
-  <li>{{ cert }}</li>
-{% endfor %}
-</ul>
+    <section>
+      <h2>📫 Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
+        <li>Portfolio: <a href="https://yourdomain.com" target="_blank">yourdomain.com</a></li>
+      </ul>
+    </section>
+  </div>
 
-## 🌐 Projects
-{% for project in site.data.resume.projects %}
-### {{ project.name }}
-**Tech Stack**: {{ project.tech }}  
-{{ project.description }}
-{% endfor %}
-
-## 📫 Contact
-- **Email**: {{ site.data.resume.contact.email }}
-- **GitHub**: [{{ site.data.resume.contact.github }}]({{ site.data.resume.contact.github }})
-- **LinkedIn**: [{{ site.data.resume.contact.linkedin }}]({{ site.data.resume.contact.linkedin }})
-- **Portfolio**: [{{ site.data.resume.contact.portfolio }}]({{ site.data.resume.contact.portfolio }})
+  <script src="script.js"></script>
+</body>
+</html>
