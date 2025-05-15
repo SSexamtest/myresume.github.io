@@ -1,61 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="grid-container">
-    <aside class="sidebar">
-      <section class="section">
-        <h1>Your Name</h1>
-        <p>Web Developer | Front-End Enthusiast</p>
-      </section>
+---
+layout: page
+title: Resume
+---
 
-      <section class="section contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p>Phone: +123 456 7890</p>
-        <p>Website: <a href="https://yourwebsite.com">yourwebsite.com</a></p>
-      </section>
+# {{ site.data.resume.name }}
 
-      <section class="section skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Git</li>
-        </ul>
-      </section>
-    </aside>
+## 👤 About Me
+{{ site.data.resume.about }}
 
-    <main class="main">
-      <section class="section">
-        <h2>About Me</h2>
-        <p>A short paragraph about your professional background, goals, and passions in tech.</p>
-      </section>
+## 🛠 Skills
+<ul>
+{% for skill in site.data.resume.skills %}
+  <li>{{ skill }}</li>
+{% endfor %}
+</ul>
 
-      <section class="section">
-        <h2>Experience</h2>
-        <p><strong>Job Title</strong> – Company Name (Year - Year)</p>
-        <ul>
-          <li>Responsibility or achievement 1</li>
-          <li>Responsibility or achievement 2</li>
-        </ul>
-      </section>
+## 💼 Experience
+{% for job in site.data.resume.experience %}
+### {{ job.title }} at {{ job.company }} ({{ job.period }})
+**Location**: {{ job.location }}
+<ul>
+{% for item in job.responsibilities %}
+  <li>{{ item }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
 
-      <section class="section">
-        <h2>Education</h2>
-        <p><strong>Degree</strong> – School Name (Year - Year)</p>
-      </section>
-    </main>
-  </div>
+## 🎓 Education
+**{{ site.data.resume.education.degree }}**, {{ site.data.resume.education.university }} – {{ site.data.resume.education.year }}
 
-  <script src="script.js"></script>
-</body>
-</html>
+## 🧠 Certifications
+<ul>
+{% for cert in site.data.resume.certifications %}
+  <li>{{ cert }}</li>
+{% endfor %}
+</ul>
+
+## 🌐 Projects
+{% for project in site.data.resume.projects %}
+### {{ project.name }}
+**Tech Stack**: {{ project.tech }}  
+{{ project.description }}
+{% endfor %}
+
+## 📫 Contact
+- **Email**: {{ site.data.resume.contact.email }}
+- **GitHub**: [{{ site.data.resume.contact.github }}]({{ site.data.resume.contact.github }})
+- **LinkedIn**: [{{ site.data.resume.contact.linkedin }}]({{ site.data.resume.contact.linkedin }})
+- **Portfolio**: [{{ site.data.resume.contact.portfolio }}]({{ site.data.resume.contact.portfolio }})
